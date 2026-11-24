@@ -1,0 +1,45 @@
+﻿
+docker : [2026-11-24 22:52:36 +0000] [1] [INFO] Starting gunicorn 23.0.0
+En línea: 1 Carácter: 1
++ docker logs practica3-web 2>&1 |
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([2026-11-24 22:...gunicorn 23.0.0:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.8.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+172.17.0.1 - - [24/Nov/2026:22:53:35 +0000] "GET /api/salud HTTP/1.1" 200 140 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; es-EC) WindowsPowerShell/5.1.26100.9711"
+172.17.0.1 - - [24/Nov/2026:22:53:49 +0000] "POST /api/procesar HTTP/1.1" 200 694715 "-" "curl/8.21.0"
+127.0.0.1 - - [24/Nov/2026:22:54:03 +0000] "POST /api/procesar HTTP/1.1" 200 16000128 "-" "python-requests/2.32.3"
+127.0.0.1 - - [24/Nov/2026:22:54:03 +0000] "POST /api/procesar HTTP/1.1" 200 16000128 "-" "python-requests/2.32.3"
+127.0.0.1 - - [24/Nov/2026:22:54:04 +0000] "POST /api/procesar HTTP/1.1" 200 16000128 "-" "python-requests/2.32.3"
+127.0.0.1 - - [24/Nov/2026:22:54:04 +0000] "POST /api/procesar HTTP/1.1" 200 16000128 "-" "python-requests/2.32.3"
+127.0.0.1 - - [24/Nov/2026:22:54:04 +0000] "POST /api/procesar HTTP/1.1" 200 16000128 "-" "python-requests/2.32.3"
+[2026-11-24 22:52:36 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-24 22:52:36 +0000] [1] [INFO] Using worker: gthread
+[2026-11-24 22:52:36 +0000] [25] [INFO] Booting worker with pid: 25
+INFO:practica3:GPU=NVIDIA GeForce RTX 3070 | Inicializacion=693.922 ms | Compilacion=412.876 ms
+INFO:practica3:ID=07002aba51964767aba29e90e5fe7e86 | GPU=NVIDIA GeForce RTX 3070 | Filtro=Media | Mascara=9 | 
+Resolucion=2000x2000 | Kernel=8.461 ms | Servidor=270.155 ms | Espera=0.000 ms
+INFO:practica3:ID=ccffe4a10e0d492dbe32947987928403 | GPU=NVIDIA GeForce RTX 3070 | Filtro=Media | Mascara=3 | 
+Resolucion=2000x2000 | Kernel=0.169 ms | Servidor=295.493 ms | Espera=0.000 ms
+INFO:practica3:ID=75d4a79f5ee14c369e0e3d67636ebe63 | GPU=NVIDIA GeForce RTX 3070 | Filtro=Media | Mascara=9 | 
+Resolucion=2000x2000 | Kernel=0.605 ms | Servidor=246.115 ms | Espera=0.000 ms
+INFO:practica3:ID=6900b1284afd448f8f366ccde167e444 | GPU=NVIDIA GeForce RTX 3070 | Filtro=Media | Mascara=21 | 
+Resolucion=2000x2000 | Kernel=2.977 ms | Servidor=208.914 ms | Espera=0.000 ms
+INFO:practica3:ID=efad2cfc5faf40c9912c1515c5d50b2e | GPU=NVIDIA GeForce RTX 3070 | Filtro=Sharpen | Mascara=3 | 
+Resolucion=2000x2000 | Kernel=0.202 ms | Servidor=243.610 ms | Espera=0.000 ms
+INFO:practica3:ID=91f8af67ca7546d2b2ecddba1c164465 | GPU=NVIDIA GeForce RTX 3070 | Filtro=Laplaciano | Mascara=3 | 
+Resolucion=2000x2000 | Kernel=0.203 ms | Servidor=363.720 ms | Espera=0.000 ms
