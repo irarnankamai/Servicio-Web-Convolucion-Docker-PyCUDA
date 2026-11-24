@@ -477,4 +477,4 @@ docker rm practica3-web
 
 ## 21. Autoría
 
-Proyecto académico desarrollado por **Noe Ayavaca e Irar Nankamai** para la asignatura de Computación Paralela de la Universidad Politécnica Salesiana, bajo la orientación del docente Gabriel A. León Paredes.
+Practica 03  desarrollado por **Noe Ayavaca e Irar Nankamai** para la asignatura de Computación Paralela de la Universidad Politécnica Salesiana, bajo la orientación del docente Gabriel A. León Paredes.
