@@ -1,0 +1,2 @@
+modo,inicializacion_ms,compilacion_ms,preparacion_ms,salida_ms,total_directo_ms,bytes_resultado,reserva_ms,h2d_ms,kernel_ms,d2h_ms,gpu_total_ms,motor_total_ms,ancho,alto,hilos,bloques_x,bloques_y,bloques,gpu
+docker_directo,211.4919519999603,4.268122999746993,63.22149400057242,649.7590959997979,758.4573049998653,2341247,1.5208730001177173,9.921855999891704,2.515968084335327,21.553554000092845,34.067753000272205,45.44925200025318,4000,4000,256,16,4000,64000,NVIDIA GeForce RTX 3070

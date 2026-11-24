@@ -1,0 +1,2 @@
+modo,inicializacion_ms,compilacion_ms,preparacion_ms,salida_ms,total_directo_ms,bytes_resultado,reserva_ms,h2d_ms,kernel_ms,d2h_ms,gpu_total_ms,motor_total_ms,ancho,alto,hilos,bloques_x,bloques_y,bloques,gpu
+windows,174.45990000851452,18.495799973607063,31.362699926830828,381.42340001650155,446.38450001366436,2308869,0.32350001856684685,12.104999972507358,2.8825600147247314,11.507999966852367,26.57839993480593,33.58639997895807,4000,4000,256,16,4000,64000,NVIDIA GeForce RTX 3070

@@ -1,0 +1,23 @@
+prueba,filtro,mascara,http_esperado,http_obtenido,tiempo_cliente_ms,request_id,bytes_respuesta,validacion,mensaje
+Imagen valida,Media,3,200,200,302.6920969996354,fa6b15bfd0b1447a83b3038957e5aa0f,985232,CORRECTA,
+Archivo invalido,Media,3,400,400,23.345175000031304,,117,CORRECTA,"{""estado"":""error"",""id"":""ebd36238ac914769980941e9c79b405e"",""mensaje"":""Archivo de imagen invalido o demasiado grande""}
+"
+Archivo vacio,Media,3,400,400,1.858943000115687,,93,CORRECTA,"{""estado"":""error"",""id"":""3a93835aeabd4217816b35df83e65dc3"",""mensaje"":""El archivo esta vacio""}
+"
+Solicitud sin imagen,Media,3,400,400,1.3192240003263578,,94,CORRECTA,"{""estado"":""error"",""id"":""b9a5cd03fc6447448b1e49e8f671dd86"",""mensaje"":""Debe cargar una imagen""}
+"
+Filtro desconocido,Desconocido,3,400,400,14.273303999289055,,90,CORRECTA,"{""estado"":""error"",""id"":""e7bfba3f322d456d883dd8e34c4bc914"",""mensaje"":""Filtro desconocido""}
+"
+Mascara Media invalida,Media,5,400,400,14.52543099912873,,102,CORRECTA,"{""estado"":""error"",""id"":""04a01519c3144ca197bcd8b48c85c173"",""mensaje"":""Tamano de mascara no permitido""}
+"
+Mascara Sharpen invalida,Sharpen,9,400,400,15.03006699931575,,102,CORRECTA,"{""estado"":""error"",""id"":""29905dc82b4b4cc39438d7bcf4964db4"",""mensaje"":""Tamano de mascara no permitido""}
+"
+Mascara Laplaciano invalida,Laplaciano,21,400,400,12.301628999921377,,102,CORRECTA,"{""estado"":""error"",""id"":""b39cbabd1083475e9ae85f0af1de64f6"",""mensaje"":""Tamano de mascara no permitido""}
+"
+Archivo superior a 40 MiB,Media,3,413,413,124.96209999972052,,109,CORRECTA,"{""estado"":""error"",""id"":""4361ac88e3544a87ad3476259a6cf25f"",""mensaje"":""El archivo supera el limite de 40 MiB""}
+"
+Dimensiones superiores a 6000,Media,3,400,400,2.535029000682698,,115,CORRECTA,"{""estado"":""error"",""id"":""41dfbd9889884fb59ccc0da55caa6dcb"",""mensaje"":""Dimensiones no permitidas. Maximo 6000x6000""}
+"
+Recuperacion del servicio,Media,9,200,200,245.77468500046962,066b33dd2b8f4260ac1da9c39fc13c21,694715,CORRECTA,
+Aislamiento solicitud A,Media,3,200,200,339.50569100034045,f6f467c34e844810893399da940e511b,16000128,CORRECTA,
+Aislamiento solicitud B,Laplaciano,3,200,200,409.3463190001785,b2018afe60e34e22b915bb898c1541a0,16000128,CORRECTA,

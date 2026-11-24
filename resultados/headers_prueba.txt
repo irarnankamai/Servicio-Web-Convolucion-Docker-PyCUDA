@@ -1,0 +1,35 @@
+HTTP/1.1 100 Continue
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 24 Nov 2026 21:34:55 GMT
+Connection: keep-alive
+Content-Disposition: attachment; filename=2f31562b42ba4043b7aef69e7dd20f1c_Media_9x9.png
+Content-Type: image/png
+Content-Length: 694715
+Cache-Control: no-store
+Expires: Tue, 24 Nov 2026 21:34:55 GMT
+X-Request-ID: 2f31562b42ba4043b7aef69e7dd20f1c
+X-Filtro: Media
+X-Mascara: 9
+X-Espera-ms: 0.0008780002644925844
+X-Preparacion-ms: 16.203269000016007
+X-Salida-ms: 191.2736560002486
+X-Servidor-ms: 311.7804659996182
+X-Solicitud-ms: 311.78685200029577
+X-Arranque-ms: 0.0
+X-Arranque-Frio: 0
+X-reserva-ms: 2.2008599999026046
+X-h2d-ms: 16.206491000048118
+X-kernel-ms: 5.21011209487915
+X-d2h-ms: 11.337633000039204
+X-gpu-total-ms: 33.838357999684376
+X-motor-total-ms: 43.05701400016915
+X-ancho: 2000
+X-alto: 2000
+X-hilos: 256
+X-bloques-x: 8
+X-bloques-y: 2000
+X-bloques: 16000
+X-gpu: NVIDIA GeForce RTX 3070
+

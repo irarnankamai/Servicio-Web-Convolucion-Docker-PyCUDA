@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Convolución de imágenes | PyCUDA</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="contenedor">
+        <p class="institucion">UNIVERSIDAD POLITÉCNICA SALESIANA</p>
+        <h1>Convolución de imágenes con PyCUDA</h1>
+        <p>Computación Paralela · Práctica de laboratorio 03</p>
+    </div>
+</header>
+
+<main class="contenedor">
+
+    <section class="panel">
+        <h2>Estado del servicio</h2>
+
+        <p id="estadoGPU" role="status">
+            Comprobando disponibilidad de GPU...
+        </p>
+    </section>
+
+    <section class="panel">
+
+        <h2>Configuración del procesamiento</h2>
+
+        <form id="formulario">
+
+            <div class="campos">
+
+                <div>
+                    <label for="imagen">Seleccionar imagen</label>
+
+                    <input type="file"
+                           id="imagen"
+                           name="imagen"
+                           accept=".jpg,.jpeg,.png,.pgm,.bmp"
+                           required>
+
+                    <small>
+                        JPG, PNG, PGM o BMP.
+                        Máximo 40 MiB y 6000 × 6000 píxeles.
+                    </small>
+                </div>
+
+                <div>
+                    <label for="filtro">Filtro de convolución</label>
+
+                    <select id="filtro" name="filtro">
+                        <option value="Media">Media</option>
+                        <option value="Sharpen">Sharpen (Nitidez)</option>
+                        <option value="Laplaciano">Laplaciano</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="mascara">Tamaño de máscara</label>
+
+                    <select id="mascara" name="mascara">
+                        <option value="3">3 × 3</option>
+                        <option value="9">9 × 9</option>
+                        <option value="21">21 × 21</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="informacion">
+                <span>Precisión: Float32</span>
+                <span>Hilos por bloque: 256</span>
+                <span>Bordes: extensión con ceros</span>
+            </div>
+
+            <button type="submit" id="procesar">
+                Procesar imagen con GPU
+            </button>
+
+            <p id="mensaje" role="status" aria-live="polite"></p>
+
+        </form>
+
+    </section>
+
+    <section class="panel">
+
+        <h2>Visualización de resultados</h2>
+
+        <div class="comparacion">
+
+            <article>
+                <h3>Imagen original</h3>
+
+                <div class="visor">
+                    <img id="original" alt="Imagen original" hidden>
+                    <span id="textoOriginal">
+                        Seleccione una imagen
+                    </span>
+                </div>
+            </article>
+
+            <article>
+                <h3>Imagen procesada con PyCUDA</h3>
+
+                <div class="visor">
+                    <img id="resultado" alt="Imagen procesada" hidden>
+                    <span id="textoResultado">
+                        Esperando procesamiento
+                    </span>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="nota">
+            La convolución utiliza un canal de intensidad
+            en escala de grises, conservando el tratamiento
+            de imágenes de la Práctica 02.
+        </p>
+
+        <a id="descargar" class="boton" hidden>
+            Descargar resultado PNG
+        </a>
+
+    </section>
+
+    <section class="panel">
+
+        <h2>Tiempos de procesamiento</h2>
+
+        <p>Todos los tiempos se expresan en milisegundos (ms).</p>
+
+        <div class="metricas">
+
+            <div class="metrica">
+                <span>CPU → GPU</span>
+                <strong id="h2d">—</strong>
+            </div>
+
+            <div class="metrica">
+                <span>Kernel CUDA</span>
+                <strong id="kernel">—</strong>
+            </div>
+
+            <div class="metrica">
+                <span>GPU → CPU</span>
+                <strong id="d2h">—</strong>
+            </div>
+
+            <div class="metrica">
+                <span>Total GPU</span>
+                <strong id="totalGPU">—</strong>
+            </div>
+
+            <div class="metrica">
+                <span>Preparación</span>
+                <strong id="preparacion">—</strong>
+            </div>
+
+            <div class="metrica">
+                <span>Reserva de memoria</span>
+                <strong id="reserva">—</strong>
+            </div>
+
+            <div class="metrica">
+                <span>Codificación de salida</span>
+                <strong id="salida">—</strong>
+            </div>
+
+            <div class="metrica">
+                <span>Espera en cola</span>
+                <strong id="espera">—</strong>
+            </div>
+
+            <div class="metrica">
+                <span>Procesamiento servidor</span>
+                <strong id="servidor">—</strong>
+            </div>
+
+            <div class="metrica">
+                <span>Total cliente</span>
+                <strong id="cliente">—</strong>
+            </div>
+
+        </div>
+
+        <h3>Información de la solicitud</h3>
+
+        <div class="tabla-contenedor">
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Identificador</th>
+                        <td id="identificador">—</td>
+                    </tr>
+
+                    <tr>
+                        <th>GPU utilizada</th>
+                        <td id="gpu">—</td>
+                    </tr>
+
+                    <tr>
+                        <th>Resolución</th>
+                        <td id="resolucion">—</td>
+                    </tr>
+
+                    <tr>
+                        <th>Filtro</th>
+                        <td id="filtroAplicado">—</td>
+                    </tr>
+
+                    <tr>
+                        <th>Máscara</th>
+                        <td id="mascaraAplicada">—</td>
+                    </tr>
+
+                    <tr>
+                        <th>Hilos por bloque</th>
+                        <td id="hilos">—</td>
+                    </tr>
+
+                    <tr>
+                        <th>Número de bloques</th>
+                        <td id="bloques">—</td>
+                    </tr>
+
+                    <tr>
+                        <th>Arranque en frío</th>
+                        <td id="arranque">—</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Universidad Politécnica Salesiana |
+    Computación Paralela |
+    PyCUDA y Docker
+</footer>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>

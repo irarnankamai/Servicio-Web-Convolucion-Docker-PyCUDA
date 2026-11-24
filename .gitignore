@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Editores
+.vscode/
+.idea/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos comprimidos
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Imagenes Docker exportadas
+*.docker
+
+# Archivos temporales
+*.tmp
+*.log
+
+# Variables privadas
+.env
+.env.*
+
+# Repositorio original de la practica 02
+referencia_p2/original/
+
+# Resultados binarios temporales
+resultados/prueba_float32.npy

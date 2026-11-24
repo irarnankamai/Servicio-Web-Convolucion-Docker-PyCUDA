@@ -1,0 +1,17 @@
+prueba,filtro,mascara,ancho,alto,hilos,error_maximo,error_medio,tolerancia,validacion,request_id
+Matriz manual 5x5,Media,3,5,5,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 5x5,Media,3,5,5,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 5x5,Media,9,5,5,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 5x5,Media,21,5,5,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 5x5,Sharpen,3,5,5,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 5x5,Laplaciano,3,5,5,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 37x53,Media,3,53,37,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 37x53,Media,9,53,37,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 37x53,Media,21,53,37,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 37x53,Sharpen,3,53,37,256,0.0,0.0,0.0001,CORRECTA,
+CPU vs GPU 37x53,Laplaciano,3,53,37,256,0.0,0.0,0.0001,CORRECTA,
+Directo vs Servicio HTTP,Media,3,2000,2000,256,0.0,0.0,0.0001,CORRECTA,5ceb24be266f488ea1a0eab25219697c
+Directo vs Servicio HTTP,Media,9,2000,2000,256,0.0,0.0,0.0001,CORRECTA,4ad51166c13a4cd39e3f41a4019fd9b3
+Directo vs Servicio HTTP,Media,21,2000,2000,256,0.0,0.0,0.0001,CORRECTA,43f7d2cf8cda4f1e879a09f92fa0b2e1
+Directo vs Servicio HTTP,Sharpen,3,2000,2000,256,0.0,0.0,0.0001,CORRECTA,c587b27b4be44a95baa9d62e764e647e
+Directo vs Servicio HTTP,Laplaciano,3,2000,2000,256,0.0,0.0,0.0001,CORRECTA,0b27cd086d7f4470a21d7e31320c8c32

@@ -1,0 +1,286 @@
+
+:root {
+    --azul: #12345b;
+    --azul-oscuro: #0b2038;
+    --verde: #16803c;
+    --fondo: #f1f5f9;
+    --texto: #1e293b;
+    --borde: #dbe3ec;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.contenedor {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: var(--azul);
+    color: white;
+    padding: 30px 0;
+    border-bottom: 5px solid var(--verde);
+}
+
+header h1 {
+    margin: 8px 0;
+    font-size: 30px;
+}
+
+header p {
+    margin: 0;
+}
+
+.institucion {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+main {
+    padding: 24px 0;
+}
+
+.panel {
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--azul);
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 17px;
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    background: white;
+    font-size: 14px;
+}
+
+small {
+    display: block;
+    color: #64748b;
+    margin-top: 6px;
+}
+
+.informacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.informacion span {
+    background: #edf2f7;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+button,
+.boton {
+    display: inline-block;
+    border: none;
+    border-radius: 7px;
+    padding: 13px 22px;
+    background: var(--azul);
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover,
+.boton:hover {
+    background: var(--azul-oscuro);
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+#descargar {
+    background: var(--verde);
+}
+
+.comparacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.visor {
+    min-height: 280px;
+    height: 360px;
+    border: 1px solid var(--borde);
+    background: #e8edf3;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.visor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.visor span {
+    color: #64748b;
+    text-align: center;
+    padding: 15px;
+}
+
+.nota {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.metricas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.metrica {
+    background: #f8fafc;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.metrica span {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.metrica strong {
+    display: block;
+    margin-top: 6px;
+    color: var(--azul);
+    font-size: 20px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid var(--borde);
+    overflow-wrap: anywhere;
+}
+
+th {
+    width: 35%;
+    background: #f8fafc;
+}
+
+.correcto {
+    color: #166534;
+    background: #dcfce7;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+.error {
+    color: #991b1b;
+    background: #fee2e2;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+.procesando {
+    color: #1e40af;
+    background: #dbeafe;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+footer {
+    text-align: center;
+    background: var(--azul-oscuro);
+    color: white;
+    padding: 22px;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .metricas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .campos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .comparacion {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+
+    .visor {
+        height: 280px;
+    }
+}
